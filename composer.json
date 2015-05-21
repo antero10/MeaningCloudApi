@@ -1,0 +1,24 @@
+{
+    "name": "bunkerdb/meaningcloud_api",
+    "version": "1.0.0",
+    "type": "library",
+    "description": "API interface for meaning cloud",
+    "keywords": ["MeaningCloud"],
+    "homepage": "https://github.com/BunkerDB/sentimental",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gustavo Sánchez",
+            "email": "gustavo@bunkerdb.com",
+            "homepage": "http://github.com/antero10",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "autoload": {
+        "classmap": ["src/MeaningCloud/Libs/"]
+    }
+
+}
