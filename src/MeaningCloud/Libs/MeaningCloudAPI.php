@@ -12,7 +12,7 @@
  *
  * @link     https://github.com/BunkerDb/mediamind_api
  */
-namespace MeaningCloud\Libs;
+
 
 /**
  * MeaningCloud Class Doc Comment.
