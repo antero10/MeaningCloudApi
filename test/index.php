@@ -2,7 +2,7 @@
 require_once '../src/MeaningCloud/Libs/MeaningCloudAPI.php';
 
 
-$MeaningCloud = new MeaningCloudAPI('974a83c1957ed9454d88edc681273b25','es-general');
+$MeaningCloud = new MeaningCloudAPI('974a83c1957ed9454d88edc681273b25','general_es');
 
 $testArray = ["Un grande que siempre va a estar!!!!!....",
             "Sobre todo con el agua en Maldonado...",
@@ -54,5 +54,5 @@ $testArray = ["Un grande que siempre va a estar!!!!!....",
         foreach ($testArray as $test) {
             echo $test . "\n";
             echo "Response : \n";
-            var_dump($MeaningCloud->getSentimentText($test));
+            $MeaningCloud->getSentimentText($test);
         }

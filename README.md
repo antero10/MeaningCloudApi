@@ -1,5 +1,5 @@
-MediaMind API
+Meaning Cloud Api
 =============
 
-This package work to connect to MediaMind API interface.
+This package work to connect to Meaning Cloud API interface.
 

@@ -1,5 +1,5 @@
 {
-    "name": "bunkerdb/meaningcloud_api",
+    "name": "BunkerDB/MeaningCloudAPI",
     "version": "1.0.0",
     "type": "library",
     "description": "API interface for meaning cloud",

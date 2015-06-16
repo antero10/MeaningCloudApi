@@ -10,7 +10,7 @@
  * @author   "Gustavo Sánchez" <gustavo@bunkerdb.com>
  * @license  http://opensource.org/licenses/GPL-3.0 GNU General Public License 3.0
  *
- * @link     https://github.com/BunkerDb/mediamind_api
+ * @link     https://github.com/BunkerDB/sentimental
  */
 
 
@@ -22,14 +22,17 @@
  * @author   "Gustavo Sánchez" <gustavo@bunkerdb.com>
  * @license  http://opensource.org/licenses/GPL-3.0 GNU General Public License 3.0
  *
- * @link     https://github.com/BunkerDb/mediamind_api
+ * @link     https://github.com/BunkerDB/sentimental
  */
+
+require_once 'MeaningCloudResponse.php';
 
 class MeaningCloudAPI
 {
-    const MEANINGCLOUD_API_URL = 'http://api.meaningcloud.com/sentiment-1.2';
+    const MEANINGCLOUD_API_URL = 'https://api.meaningcloud.com/sentiment-2.0';
     private $api_key;
     private $model;
+    
     
     /**
      * __construct function.
@@ -38,10 +41,10 @@ class MeaningCloudAPI
      * @param string $model      - API model type (es-general,en-general,fr-general)
      */
     
-    public function __construct($api_key,$model) {
+    public function __construct($api_key,$model) 
+    {
         $this->api_key = $api_key;
         $this->model = $model;
-        
     }
     
     /*
@@ -50,7 +53,8 @@ class MeaningCloudAPI
      * @param string $concept (OPTIONAL) - The concept of the text, This can improve the performance of the classifier
      */
     
-    public function getSentimentText($text,$concept = null) {
+    public function getSentimentText($text,$concept = 'auto') 
+    {
         $data = http_build_query(array('key'=>$this->api_key,
                                 'model'=>$this->model,
                                 'txt'=>$text,
@@ -68,9 +72,10 @@ class MeaningCloudAPI
         } catch (Exception $ex) {
             throw $ex;
         }
-        return json_decode($response);
+        return  new MeaningCloudResponse(json_decode($response,true));
 
     }
     
+   
     
 }
