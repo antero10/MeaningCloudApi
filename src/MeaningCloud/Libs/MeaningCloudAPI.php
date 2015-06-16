@@ -13,7 +13,6 @@
  * @link     https://github.com/BunkerDB/sentimental
  */
 
-
 /**
  * MeaningCloud Class Doc Comment.
  *
@@ -24,7 +23,6 @@
  *
  * @link     https://github.com/BunkerDB/sentimental
  */
-
 require_once 'MeaningCloudResponse.php';
 
 class MeaningCloudAPI
@@ -32,50 +30,44 @@ class MeaningCloudAPI
     const MEANINGCLOUD_API_URL = 'https://api.meaningcloud.com/sentiment-2.0';
     private $api_key;
     private $model;
-    
-    
+
     /**
      * __construct function.
      *
      * @param string $api_key - Meaning Cloud API Key
-     * @param string $model      - API model type (es-general,en-general,fr-general)
+     * @param string $model   - API model type (es-general,en-general,fr-general)
      */
-    
-    public function __construct($api_key,$model) 
+    public function __construct($api_key, $model)
     {
         $this->api_key = $api_key;
         $this->model = $model;
     }
-    
+
     /*
      * getSentimentText function
      * @param string $text - Text to be clasified
      * @param string $concept (OPTIONAL) - The concept of the text, This can improve the performance of the classifier
      */
-    
-    public function getSentimentText($text,$concept = 'auto') 
+
+    public function getSentimentText($text, $concept = 'auto')
     {
-        $data = http_build_query(array('key'=>$this->api_key,
-                                'model'=>$this->model,
-                                'txt'=>$text,
-                                'concept'=>$concept)); 
-        $context = stream_context_create(array('http'=>array(
-            'method'=>'POST',
-            'header'=>
-            'Content-type: application/x-www-form-urlencoded'."\r\n".
+        $data = http_build_query(array('key' => $this->api_key,
+                                'model' => $this->model,
+                                'txt' => $text,
+                                'concept' => $concept, ));
+        $context = stream_context_create(array('http' => array(
+            'method' => 'POST',
+            'header' => 'Content-type: application/x-www-form-urlencoded'."\r\n".
             'Content-Length: '.strlen($data)."\r\n",
-            'content'=>$data)));
+            'content' => $data, )));
         try {
             $fd = fopen(self::MEANINGCLOUD_API_URL, 'r', false, $context);
             $response = stream_get_contents($fd);
-            fclose($fd); 
+            fclose($fd);
         } catch (Exception $ex) {
             throw $ex;
         }
-        return  new MeaningCloudResponse(json_decode($response,true));
 
+        return  new MeaningCloudResponse(json_decode($response, true));
     }
-    
-   
-    
 }

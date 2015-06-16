@@ -11,7 +11,6 @@
  *
  * @link     https://github.com/BunkerDB/sentimental
  */
-
 class MeaningCloudResponse
 {
     public $code;
@@ -25,8 +24,9 @@ class MeaningCloudResponse
     public $sentence_list;
     public $sentimented_entity_list;
     public $sentimented_concept_list;
-    
-    public function __construct($attributes) {
+
+    public function __construct($attributes)
+    {
         $this->code = $attributes['status']['code'];
         $this->credits = $attributes['status']['credits'];
         $this->remaining_credits = $attributes['status']['remaining_credits'];
@@ -39,5 +39,4 @@ class MeaningCloudResponse
         $this->sentimented_entity_list = $attributes['sentimented_entity_list'];
         $this->sentimented_concept_list = $attributes['sentimented_concept_list'];
     }
-    
 }
