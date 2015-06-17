@@ -2,7 +2,7 @@
 
 require_once '../src/MeaningCloud/Libs/MeaningCloudAPI.php';
 
-$MeaningCloud = new MeaningCloudAPI('974a83c1957ed9454d88edc681273b25', 'general_es');
+$MeaningCloud = new MeaningCloudAPI('API-KEY', 'general_es');
 
 $testArray = ['Un grande que siempre va a estar!!!!!....',
             'Sobre todo con el agua en Maldonado...',
