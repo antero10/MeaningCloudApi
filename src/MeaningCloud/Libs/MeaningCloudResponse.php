@@ -39,4 +39,22 @@ class MeaningCloudResponse
         $this->sentimented_entity_list = $attributes['sentimented_entity_list'];
         $this->sentimented_concept_list = $attributes['sentimented_concept_list'];
     }
+    
+    public function getSentimentValue()
+    {
+        switch ($this->score_tag) {
+            case 'P+':
+                return 1;
+            case 'P':
+                return 0.8;
+            case 'NEU':
+                return 0.5;
+            case 'N':
+                return 0.25;
+            case 'N+':
+                return 0;
+            case 'NONE':
+                return 0; 
+        }
+    }
 }

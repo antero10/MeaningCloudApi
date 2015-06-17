@@ -35,7 +35,7 @@ class MeaningCloudAPI
      * __construct function.
      *
      * @param string $api_key - Meaning Cloud API Key
-     * @param string $model   - API model type (es-general,en-general,fr-general)
+     * @param string $model   - API model type (general_es,general_en,general_fr,auto)
      */
     public function __construct($api_key, $model)
     {
