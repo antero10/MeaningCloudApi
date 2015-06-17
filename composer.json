@@ -1,15 +1,14 @@
 {
     "name": "antero10/meaningcloud_api",
-    "version": "1.0.2",
     "type": "library",
     "description": "API interface for meaning cloud",
     "keywords": ["MeaningCloud"],
-    "homepage": "https://github.com/BunkerDB/sentimental",
+    "homepage": "https://github.com/antero10/MeaningCloud",
     "license": "MIT",
     "authors": [
         {
             "name": "Gustavo Sánchez",
-            "email": "gustavo@bunkerdb.com",
+            "email": "antero105@gmail.com",
             "homepage": "http://github.com/antero10",
             "role": "Developer"
         }
