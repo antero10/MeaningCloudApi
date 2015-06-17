@@ -1,6 +1,6 @@
 {
     "name": "antero10/meaningcloud_api",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "type": "library",
     "description": "API interface for meaning cloud",
     "keywords": ["MeaningCloud"],
